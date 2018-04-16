@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - 8.10.0
+cache: yarn
+
+branches:
+  only: master
+git:
+  depth: 1
+
+
+install:
+  - yarn
+
+
+script:
+  - yarn build
+
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token:
+    secure: UvKgSq3mPKQQweKnMtzSWyDsdGV0kNjkCJOYn4aWy4sp0zQFhR+oCN9/Os/3RQNy1UvrHiGbABeYc48O3cqYjfsdDCXFNRyuTGE6H9Sy9TNhr7Z9tnGuFIqXsYb7yzdVDuyr3UoPMBVRaS7Xc0VSCZKQUW4RQi+zDsquMWRHJDAER7V9g08CycXorNgZBE+qYRJ5bSiTBWG/6KfoH2Uypji3fzlb3NnCnFeli8F5ChAXzgVx9DLDPYrLs92eaaArmVx2JH+d1AmY4zp3QbN68AtokCV4145IV+NMo33KABlfZjm4CAsma3oAHWDxzxFjfP1Nf0ul5JaSlj77hSe30/5hejlg2AzG/gEVeqCGfLJrWrcstFKeBmVUGtMwvPsClpYe+8BZT+5iUkBVaoRYqM/1BpQCiThVm/SPyTRSULrdwSQrNJsaiS9p8AIgsRoylwQ+g2GCBZmeIOFireH7xsmtez2QDjuteQteBF6LCQm+WcIQKwRpyDJyCAAS/Vl/5kGBKXiXjkg0PC6LEV1szccMs//JbMQdvbmeoe9juyaWKYYuWdBG9orG/rm9e8KuaGi2DuJh7bPsfrwmZAjcxaqnPfkHTThNa88dA92lNPYVvRnbY0p2BBq7Hb8JMA188iSZe26g7Jyb0XBqFIotjOYyqnJWKxEIlKH/MS28wcw=
+  on:
+    branch: master
+  local-dir: build
